@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d20">
+
+  <title>دستیار کانفیگ‌ساز رایگان</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <section id="authView" class="auth-wrap hidden">
+    <div class="auth-card">
+
+      <div class="brand-mark">✦</div>
+
+      <h1>دستیار کانفیگ‌ساز رایگان</h1>
+      <p id="authSubtitle">دستیار هوشمند فارسی شما</p>
+
+      <form id="authForm">
+
+        <label>
+          نام کاربری
+          <input id="username" required minlength="3">
+        </label>
+
+        <label>
+          رمز عبور
+          <input id="password" type="password" required minlength="8">
+        </label>
+
+        <label id="confirmWrap" class="hidden">
+          تکرار رمز عبور
+          <input id="confirmPassword" type="password" minlength="8">
+        </label>
+
+        <label id="rememberWrap">
+          <input id="remember" type="checkbox" checked>
+          مرا به خاطر بسپار
+        </label>
+
+        <button id="authSubmit" class="primary full" type="submit">
+          ورود
+        </button>
+
+        <p id="authMessage" class="notice"></p>
+
+      </form>
+    </div>
+  </section>
+
+  <div id="appView" class="app hidden">
+
+    <aside id="sidebar" class="sidebar">
+
+      <div class="side-head">
+        <strong>دستیار کانفیگ‌ساز</strong>
+        <button id="closeSide">×</button>
+      </div>
+
+      <button id="newChat" class="new-chat">
+        ＋ گفت‌وگوی جدید
+      </button>
+
+      <div class="history-title">گفت‌وگوهای شما</div>
+
+      <div id="chatList" class="chat-list"></div>
+
+      <div class="side-bottom">
+        <div id="userLabel"></div>
+
+        <button id="changePassword" class="menu-item">
+          🔑 تغییر رمز عبور
+        </button>
+
+        <button id="logout" class="menu-item">
+          ↪ خروج از حساب
+        </button>
+      </div>
+
+    </aside>
+
+    <div id="scrim" class="scrim"></div>
+
+    <main class="main">
+
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn">☰</button>
+        <div class="top-title">دستیار کانفیگ‌ساز رایگان</div>
+        <button id="clearBtn" class="icon-btn">＋</button>
+      </header>
+
+      <section id="conversation" class="conversation">
+
+        <div id="welcome" class="welcome">
+
+          <img
+            src="/profile.png"
+            alt="تصویر دستیار هوش مصنوعی"
+            class="hero-avatar"
+          >
+
+          <h1>سلام! چطور می‌توانم کمکت کنم؟</h1>
+
+          <p>
+            سؤالت را بنویس یا فایل موردنظرت را انتخاب کن.
+          </p>
+
+          <div class="suggestions">
+            <button data-prompt="برای ساخت یک پروژه وب فارسی راهنمایی‌ام کن.">
+              💻 ساخت پروژه
+            </button>
+
+            <button data-prompt="درباره ساخت کانفیگ امن و قانونی راهنمایی‌ام کن.">
+              🛠️ راهنمای کانفیگ
+            </button>
+          </div>
+
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+      </section>
+
+      <div id="pendingFile" class="pending-file hidden"></div>
+
+      <form id="chatForm" class="composer">
+
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/*,audio/*,video/*,.pdf,.txt"
+          hidden
+        >
+
+        <button id="attachBtn" type="button" class="attach-btn">
+          ＋
+        </button>
+
+        <textarea
+          id="messageInput"
+          rows="1"
+          placeholder="پیامت را اینجا بنویس..."
+        ></textarea>
+
+        <button id="sendBtn" type="submit" class="send-btn">
+          ➤
+        </button>
+
+      </form>
+
+      <p class="disclaimer">
+        پاسخ‌های هوش مصنوعی ممکن است اشتباه باشند.
+      </p>
+
+    </main>
+
+  </div>
+
+  <dialog id="passwordDialog">
+    <form id="changeForm">
+
+      <h3>تغییر رمز عبور</h3>
+
+      <label>
+        رمز فعلی
+        <input id="oldPassword" type="password" required>
+      </label>
+
+      <label>
+        رمز جدید
+        <input id="newPassword" type="password" minlength="8" required>
+      </label>
+
+      <p id="changeMessage"></p>
+
+      <button type="button" id="cancelChange">انصراف</button>
+      <button type="submit" class="primary">ذخیره رمز</button>
+
+    </form>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+
+</body>
+        </html>
